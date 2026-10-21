@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --fundoGeral: #f8fafc;
+        --texto: #1e293b;
+        --roxoPrincipal: #5865f2; /*Botões, links ativos e destaques*/
+        --roxoSuave: #eef0ff; /*Fundos de destaque*/
+        --branco: #ffffff;
+        --textoSecundario: #64748b; /*Autores, Datas e subtitulos*/
+        --Bordas: #e2e8f0;
+        --vermelhoFavorito: #f05270;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        font-optical-sizing: auto;
+        font-style: normal;
+        background-color: var(--fundoGeral);
+      }
+      header {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 30px;
+        border-bottom: 0.5px solid rgba(0, 0, 0, 0.325);
+        box-shadow: 0px 3px 2px rgba(0, 0, 0, 0.147);
+      }
+      div#logo > h1 {
+        color: var(--texto);
+      }
+      header div {
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 5px;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header img {
+        object-fit: cover;
+      }
+      nav {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 8px;
+      }
+      main {
+        padding: 15px 20px;
+      }
+      nav a {
+        text-decoration: none;
+        color: var(--texto);
+        font-size: 1.1em;
+      }
+
+      #livros {
+        margin-top: 15px;
+      }
+      #cabeca {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+      }
+      #cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 10px;
+      }
+      .card {
+        border: 1px solid var(--Bordas);
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.255);
+        border-radius: 10px;
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 7px;
+        align-items: flex-start;
+        padding: 15px;
+        background-color: var(--branco);
+      }
+      .titulo {
+        color: var(--texto);
+      }
+      .data {
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: center;
+        color: var(--textoSecundario);
+        gap: 5px;
+      }
+      .autor {
+        color: var(--textoSecundario);
+      }
+      .heart {
+        padding: 5px;
+        border-radius: 3px;
+        border: none;
+        text-align: center;
+      }
+      .heart.ativo {
+        background-color: var(--vermelhoFavorito);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <img src="imgs/book-open.png" alt="Logo" style="width: 40px" />
+        <h1>Book<span style="color: var(--roxoPrincipal)">Explorer</span></h1>
+      </div>
+      <nav id="navbar">
+        <div id="inicio">
+          <img src="imgs/house.png" alt="Inicio" />
+          <a href="index.html">Inicio</a>
+        </div>
+        <div id="favoritos">
+          <img src="imgs/coracao.png" alt="Favoritos" />
+          <a href="index.html">Favoritos</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section id="livros">
+        <div id="cabeca">
+          <p id="numerodeLivros"></p>
+          <div>
+            <label for="mostrar">Mostrar</label>
+            <select name="mostrar" id="mostrar"></select>
+          </div>
+        </div>
+
+        <div id="cards"></div>
+      </section>
+    </main>
+  </body>
+    <script type="module" src="Js/favoritos.js"></script>
+</html>
